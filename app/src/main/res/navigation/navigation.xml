@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/legendsFragment">
+
+    <fragment
+        android:id="@+id/legendsFragment"
+        android:name="edu.itesm.apexlegends.LegendsFragment"
+        android:label="fragment_legends"
+        tools:layout="@layout/fragment_legends" >
+        <action
+            android:id="@+id/action_legendsFragment_to_legendFragment"
+            app:destination="@id/legendFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/legendFragment"
+        android:name="edu.itesm.apexlegends.LegendFragment"
+        android:label="fragment_legend"
+        tools:layout="@layout/fragment_legend" />
+</navigation>

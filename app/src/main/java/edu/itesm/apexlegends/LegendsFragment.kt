@@ -1,0 +1,59 @@
+package edu.itesm.apexlegends
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.fragment_legends.*
+
+
+class LegendsFragment : Fragment() {
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_legends, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        legend_recycler.apply {
+            // set a LinearLayoutManager to handle Android
+            // RecyclerView behavior
+            layoutManager = LinearLayoutManager(activity)
+            // set the custom adapter to the RecyclerView
+            adapter = LegendsAdapter(createData())
+        }
+
+
+    }
+
+
+    fun createData(): ArrayList<Legend>{
+        val legend = ArrayList<Legend>()
+        legend.add(Legend(R.drawable.bangalore,"Bangalore", "Soldado profesional","Bangalore pertenece a una familia militar donde las haya: ella, sus padres y sus cuatro hermanos mayores sirvieron a IMC. Ha sido un soldado excepcional toda su vida. Dedicada a la causa de IMC, fue la primera de su promoción en la Academia Militar de IMC y la única cadete capaz de desensamblar un Peacekeeper, equiparlo con un estrangulador de precisión y volver a montarlo en menos de 20 segundos... con los ojos vendados.","«Aunque os dejase elegir el arma, os ganaría»."))
+        legend.add(Legend(R.drawable.bloodhound, "Bloodhound", "Rastreadora tecnológica", "Bloodhound es conocida en las Tierras Salvajes por ser una de las mejores cazadoras de La Frontera. Bloodhound era hija de dos ingenieros destinados a la central industrial Un nuevo amanecer de Talos. Su tío Artur la adoptó después de que un accidente destruyese las instalaciones y acabase con sus padres. Artur le enseñó las Viejas costumbres, un sistema de creencias que se centra en la gloria de la naturaleza y rechaza la tecnología moderna. Sin embargo, a Bloodhound siempre le atrajeron las maravillas tecnológicas y acabó por utilizar una combinación de métodos antiguos y nuevos para acabar con un goliat que acechaba a los aldeanos. Esto cambió para siempre su camino.","«Soy la cazadora enviada por los dioses»."))
+        legend.add(Legend(R.drawable.caustic, "Caustic", "Trampero tóxico", "Alexander Nox era uno de los científicos más brillantes de Humbert Labs, el principal fabricante de gases pesticidas de La Frontera. Nox trabajaba día y noche en el desarrollo de nuevas fórmulas para las inmensas cantidades de pesticidas necesarios para proteger los cultivos que sustentan a las Tierras Salvajes, pero descubrió que los métodos de prueba obstaculizaban el progreso. Necesitaba realizar pruebas no solo en tejidos inertes, sino en sujetos vivos.","«No me interesan las ambiciones de unos insectos»."))
+        legend.add(Legend(R.drawable.crypto, "Crypto", "Experto en vigilancia", "Crypto está especializado en secretos. Es un hacker brillante y un experto en cifrado y utiliza drones aéreos para espiar a sus rivales en la arena de Apex y pasar desapercibido. Pero él también tiene un secreto: se llama Tae Joon Park y se unió a los Juegos Apex para buscar a los que lo habían incriminado por asesinato.","«Es difícil tener miedo cuando estás tan preparado»"))
+        legend.add(Legend(R.drawable.fuse, "Fuse", "Grandioso experto en explosivos", "Fuse, todo virilidad y seducción, es un equipo de demolición... Y lo sabe. Rebosante de alegría, es un despreocupado entusiasta de las demoliciones, armado hasta los dientes de cosas que EXPLOTAN. Fuse tiene confianza de sobra, pero no se le da bien planificar. Prefiere volar lo que sea y dejar las preguntas para después y se le da fenomenal buscar chatarra.","«Si tienes trabajos sucios, yo los hago a buen precio»."))
+        legend.add(Legend(R.drawable.gibraltar, "Gibraltar", "Fortaleza escudada", "Gibraltar es un gigante amable con un lado rebelde. Hijo de 2 voluntarios de la SARAS (Sociedad de Auxilio, Rescate, Acogida y Salvamento), siempre se le ha dado bien sacar a otros de situaciones comprometidas, frecuentes en las Tierras Salvajes. Sin embargo, solo empezó a comprender el valor de proteger a los demás cuando él y su novio cogieron a escondidas la moto de su padre, salieron con ella a divertirse y quedaron atrapados por una letal avalancha de barro. Sus progenitores fueron en su búsqueda, pero su padre perdió un brazo en el rescate. Gibraltar nunca olvidó este sacrificio, y por eso ahora dedica su vida a ayudar a gente necesitada.","«Intenta moverme. Nos vamos a reír»."))
+        legend.add(Legend(R.drawable.horizon, "Horizon", "Manipuladora gravitacional", "Hace casi un siglo, las Tierras Salvajes estaban al borde de una crisis energética catastrófica. Por eso encargaron a la Dra. Mary Somers, una encantadora y excéntrica astrofísica, que buscara una solución. Mary se llevó a su familia al centro de investigación científica de Olympus y empezó a trabajar.\n" + "\n" + "Con la ayuda de su aprendiz, la Dra. Reid, Mary descubrió el Branthium, un elemento que estaba convencida de que podía ser la clave de una energía ilimitada. Pero el Branthium solo se encuentra en el disco de acrecimiento de los agujeros negros. Así, Mary y la Dra. Reid emprendieron una peligrosa misión para demostrar su teoría.","«Divirtámonos un poco con las leyes de la física, ¿vale?»"))
+        legend.add(Legend(R.drawable.lifeline, "Lifeline", "Médica de combate", "Ajay Che, apodada Lifeline, no es la típica persona que esperarías encontrar en los Juegos Apex. Hija de unos ricos mercaderes de la guerra, huyó de casa cuando supo el daño que había provocado su familia y se alistó en el Cuerpo de Paz Fronterizo, una organización humanitaria que ayuda a las comunidades necesitadas de la Frontera. Desde entonces ha dedicado su vida a ayudar a los demás y se ha unido a los Juegos Apex para financiar el Cuerpo de Paz Fronterizo con sus ganancias.","«No te rindas nunca. Así es como se gana»."))
+        legend.add(Legend(R.drawable.loba, "Loba", "Ladrona de la alta sociedad", "Cuando Loba tenía nueve años vio a Revenant, un sicario simulacrum, asesinar a su familia. Sin nada ni nadie, consiguió sobrevivir a base de robar. Con el tiempo, las habilidades y herramientas de Loba mejoraron lo bastante como para salir de la miseria. Todo cambió cuando consiguió entrar en unas instalaciones supuestamente impenetrables y hacerse con la tecnología de salto que albergaban. Gracias a su nueva pulsera de teletransporte, los objetos más protegidos e inalcanzables estaban ahora a su alcance... al igual que su sueño de vivir a lo grande.","\"El combate tiene cierta elegancia. Te lo demostraré\"."))
+        legend.add(Legend(R.drawable.mirage, "Mirage", "Pícaro holográfico", "Mirage es la típica persona a la que le gusta no pasar desapercibida. El menor de 4 hermanos, ha llevado a la perfección el arte de bromear para llamar la atención. Lo que sí se tomó muy en serio fue la tecnología de holopiloto. Su madre, ingeniera, le enseñó los entresijos de esta tecnología creadora de ilusiones, y Mirage se entregó al estudio de sus mecanismos hasta aprender todo lo que pudo sobre estos. Incluso después de que sus hermanos desaparecieran en combate durante la Guerra de la Frontera, Mirage y su madre siguieron desarrollando dispositivos holográficos, y el trabajo los unió.","«No me doy muchos aires. La verdad es que no me doy ningún aire. Tendría que salir más a que me diera un poco»."))
+        legend.add(Legend(R.drawable.octane, "Octane", "Acróbata veloz", "Un día, Octavio Silva estaba aburrido. De hecho, así era la mayoría de los días. Hijo de los presidentes de Silva Pharmaceuticals (absortos en su trabajo) y con todo el dinero del mundo, se entretenía realizando increíbles acrobacias desafiando a la muerte y publicando holovídeos de estas para el asombro de sus seguidores. Aquel día, decidió batir el récord de un circuito cercano lanzándose hacia la línea de meta... tras explotar una granada.","«Tío... ¡Qué subidón de adrenalina!»."))
+        legend.add(Legend(R.drawable.pathfinder, "Pathfinder", "Explorador de avanzada\n", "Pathfinder es la viva imagen del optimismo, pese a sus circunstancias. Es un MRVN (Mecanismo Robótico Versátil Nanocomputerizado) modificado para especializarse en exploración y reconocimiento de ubicaciones. Su sistema central se activó hace décadas en un almacén abandonado, sin tener ni idea de quién lo había creado ni por qué. Con su designación de MRVN como única pista sobre su identidad, Pathfinder empezó a buscar a su creador.","«Perder no es divertido. Por eso no lo hago»."))
+        legend.add(Legend(R.drawable.rampart, "Rampart", "Tuneadora rápida e ingeniosa", "Rampart es una empresaria trabajadora, que solo necesita un arma potente y una mochila llena de chatarra para sobrevivir en el peligroso mundo tipo lejano oeste de las Tierras Salvajes. Antes de abrir su popular negocio de modificadores en Gaea, Ramya Parekh (Rampart para abreviar) se hizo famosa en el circuito del guantelete subterráneo. Parekh llegó a lo más alto gracias a sus habilidades con sus equipos tuneados. Empezó a aceptar trabajos de contrabandistas, miembros del sindicato y todos los demás. Se dice que no es genial hasta que pone Rampart.","\"Si algún día os abandono, probablemente será porque me cansé un poco de sacaros las castañas del fuego\"."))
+        legend.add(Legend(R.drawable.revenant, "Revenant", "Pesadilla sintética", "Revenant era humano, el mejor sicario del Sindicato de mercenarios. Cuando se miraba en el espejo, lo único que veía era el reflejo de una cara humana. Pero el tiempo lo cambia todo, y cuando su programación empezó a fallar, fue consciente de en qué se había convertido a manos del Sindicato de mercenarios y Hammond Robotics: en un tormento andante de acero y vestigios de carne. Sus jefes lo resucitaron en forma de simulacro, le arrancaron de la muerte una y otra vez... y lo programaron para que olvidara.","\"He visto el otro lado, saco de huesos. No hay nada. No eres nada.\""))
+        legend.add(Legend(R.drawable.wattson, "Watson", "Defensora estática", "Natalie \"Wattson\" Paquette es un rostro familiar en los Juegos Apex, aunque por razones diferentes a la mayoría. Su padre era el director de ingería eléctrica, estudió sus manuales para estar cerca de él y descubrió su vocación desde pequeña. Aunque podía estar completamente distraída un momento e hiperconcentrada el siguiente, la electricidad le ayudaba a centrarse. Su movimiento ordenado y predecible tenía mucha más lógica que el resto del mundo.","\"Luchar conmigo es ir contra corriente. Y eso se paga\"."))
+        legend.add(Legend(R.drawable.wraith, "Wraith", "Hostigadora interdimensional", "Wraith es un torbellino de lucha, capaz de realizar ataques letales y manipular el espacio-tiempo mediante la creación de brechas en el continuo de la realidad. Pero estas habilidades tienen un precio. Hace años, se despertó en un centro de detención de IMC sin recordar quién era. La jefa de experimentos Renee Blasey, que se ofreció como conejillo de Indias para sus pruebas, cuya compañera la traicionó y la encerró... ya no existía. Lo único que quedaba era una niña tímida, asustada por una cacofonía de voces de su cabeza, hasta que apareció otra versión de ella y le enseñó a escuchar a las voces. Wraith le hizo caso y reunió fuerzas para liberarse de su prisión y escapar a una realidad diferente: esta realidad.","«Hay una fina línea entre vida y muerte. Estaré allí»."))
+
+        return legend
+    }
+}
