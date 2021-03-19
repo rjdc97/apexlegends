@@ -14,10 +14,17 @@
         android:orientation="vertical"
         android:padding="10dp">
 
+        <TextView
+            android:id="@+id/toast"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" />
+
         <ImageView
             android:id="@+id/fotoA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:gravity="center"
             android:baselineAlignBottom="false"
             android:paddingLeft="10dp"
             android:textAlignment="center"
@@ -26,31 +33,41 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:paddingLeft="10dp">
 
             <TextView
                 android:id="@+id/nombre"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nombre"
                 android:textColor="@android:color/primary_text_dark"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/separador"
+                android:textSize="14sp" />
+
+            <TextView
                 android:id="@+id/rango"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="rango"
+                android:text="habilidades"
                 android:textColor="@color/black"
                 android:textStyle="italic" />
 
-            <TextView
-                android:id="@+id/asptec"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="aspectos tecnicos" />
-
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/asptec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:text="aspectos tecnicos" />
+
     </LinearLayout>
 </FrameLayout>

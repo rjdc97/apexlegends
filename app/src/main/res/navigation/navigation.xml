@@ -12,11 +12,19 @@
         tools:layout="@layout/fragment_legends" >
         <action
             android:id="@+id/action_legendsFragment_to_legendFragment"
-            app:destination="@id/legendFragment" />
+            app:destination="@id/legendFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
     </fragment>
     <fragment
         android:id="@+id/legendFragment"
         android:name="edu.itesm.apexlegends.LegendFragment"
         android:label="fragment_legend"
-        tools:layout="@layout/fragment_legend" />
+        tools:layout="@layout/fragment_legend" >
+        <argument
+            android:name="legend"
+            app:argType="edu.itesm.apexlegends.Legend" />
+    </fragment>
 </navigation>

@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 class LegendsAdapter (private val legend: List<Legend>)
@@ -29,6 +30,11 @@ class LegendsAdapter (private val legend: List<Legend>)
         holder.nombre.text = legend.nombre
         holder.rango.text = legend.rango
         holder.asptec.text = legend.asptec
+        holder.itemView.setOnClickListener{
+            val action = LegendsFragmentDirections.actionLegendsFragmentToLegendFragment(legend)
+            holder.itemView.findNavController().navigate(action)
+
+        }
     }
 
     override fun getItemCount(): Int {
